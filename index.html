@@ -334,15 +334,19 @@
         <h2>Plan je gratis intake</h2>
         <p>Laat je gegevens achter. We antwoorden binnen 1 werkdag.</p>
       </div>
-      <form onsubmit="event.preventDefault(); alert('Bedankt! We contacteren je snel.');">
+      <!-- Contactformulier: verstuurt naar info@integrit-consultancy.be via Formsubmit -->
+      <form action="https://formsubmit.co/info@integrit-consultancy.be" method="POST">
+        <!-- disable captcha and set onderwerp -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="Nieuwe intake aanvraag via SmartSync site" />
         <div class="grid grid-2">
-          <input type="text" placeholder="Voornaam" required />
-          <input type="text" placeholder="Achternaam" required />
+          <input type="text" name="first_name" placeholder="Voornaam" required />
+          <input type="text" name="last_name" placeholder="Achternaam" required />
         </div>
-        <input type="text" placeholder="Bedrijf" />
-        <input type="email" placeholder="E‑mail" required />
-        <input type="text" placeholder="Telefoon" />
-        <textarea placeholder="Waar kunnen we mee helpen?" rows="4"></textarea>
+        <input type="text" name="company" placeholder="Bedrijf" />
+        <input type="email" name="email" placeholder="E‑mail" required />
+        <input type="text" name="phone" placeholder="Telefoon" />
+        <textarea name="message" placeholder="Waar kunnen we mee helpen?" rows="4"></textarea>
         <button type="submit">Verzend</button>
       </form>
     </section>
