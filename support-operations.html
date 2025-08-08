@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartSync – Support & Operations automatisatie</title>
+    <style>
+      /* Reuse base styles from index.html for consistency */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: radial-gradient(circle at 50% 0%, #e6f0ff 0%, #ffffff 40%, #f7f7fb 100%);
+        color: #1f2937;
+        line-height: 1.5;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      h1, h2, h3 {
+        font-weight: 600;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+      .glass {
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 1rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        width: 100%;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: bold;
+      }
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+      .hero {
+        text-align: center;
+        padding: 4rem 0;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      ul {
+        list-style: disc;
+        padding-left: 1.25rem;
+      }
+      .card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      /* Contact form styles */
+      .contact form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.6);
+      }
+      .contact button {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        color: white;
+        background: linear-gradient(90deg, #0ea5e9, #6366f1);
+        cursor: pointer;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem 0;
+        font-size: 0.875rem;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="glass">
+      <nav class="container">
+        <div class="logo">
+          <img src="logo-icon.png" alt="SmartSync logo" />
+          <span>SmartSync</span>
+        </div>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#workflow">Werkwijze</a></li>
+          <li><a href="index.html#security">Security</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="hero container">
+      <h1>Support & Operations automatisatie</h1>
+      <p style="max-width:640px;margin:1rem auto;">
+        Ontzorg je supportteam met automatische ticketcreatie, SLA‑bewaking en self‑service flows. Wij verbinden systemen zodat incidenten en verzoeken sneller worden afgehandeld.
+      </p>
+    </section>
+    <section class="container">
+      <div class="section-title">
+        <h2>Wat we automatiseren</h2>
+      </div>
+      <div class="card">
+        <ul>
+          <li>Tickets automatisch aanmaken, triëren en verrijken.</li>
+          <li>SLA‑bewaking en escalaties via Teams/Slack.</li>
+          <li>Self‑service flows voor resets, provisioning en updates.</li>
+        </ul>
+      </div>
+    </section>
+    <section id="contact" class="container contact">
+      <div class="section-title">
+        <h2>Plan je gratis intake</h2>
+        <p>Laat je gegevens achter. We antwoorden binnen 1 werkdag.</p>
+      </div>
+      <form action="https://formsubmit.co/info@integrit-consultancy.be" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="Nieuwe intake aanvraag via SmartSync site" />
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.75rem;">
+          <input type="text" name="first_name" placeholder="Voornaam" required />
+          <input type="text" name="last_name" placeholder="Achternaam" required />
+        </div>
+        <input type="text" name="company" placeholder="Bedrijf" />
+        <input type="email" name="email" placeholder="E‑mail" required />
+        <input type="text" name="phone" placeholder="Telefoon" />
+        <textarea name="message" placeholder="Waar kunnen we mee helpen?" rows="4"></textarea>
+        <button type="submit">Verzend</button>
+      </form>
+    </section>
+    <footer>
+      © <span id="year"></span> SmartSync. Alle rechten voorbehouden.
+    </footer>
+    <script>
+      document.getElementById('year').innerText = new Date().getFullYear();
+    </script>
+  </body>
+</html>

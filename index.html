@@ -193,33 +193,7 @@
         opacity: 0.7;
       }
 
-      /* Styles for tabbed usecases section */
-      .tabs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-      }
-      .tab {
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        font-weight: 500;
-        background: rgba(255, 255, 255, 0.3);
-        transition: background 0.2s, border-color 0.2s;
-      }
-      .tab.active {
-        border-color: rgba(0, 0, 0, 0.3);
-        background: rgba(255, 255, 255, 0.5);
-      }
-      .tab-content {
-        display: none;
-        margin-top: 1rem;
-      }
-      .tab-content.active {
-        display: block;
-      }
+      /* removed tabbed usecases section styles */
     </style>
   </head>
   <body>
@@ -280,105 +254,47 @@
         <div class="card">Beheer & support – Wij blijven eigenaar van de ketens en bieden SLA‑support, versiebeheer en audits.</div>
       </div>
     </section>
-    <!-- Usecases -->
-    <!-- Original usecases moved to 'usecases-old' for backup -->
-    <section id="usecases-old" class="container">
+    <!-- Use‑cases -->
+    <section id="usecases" class="container">
       <div class="section-title">
         <h2>Use‑cases</h2>
         <p>Voorbeelden die we vaak realiseren.</p>
       </div>
       <div class="grid grid-2">
-        <div class="card">
+        <a href="sales-marketing.html" class="card">
           <h3>Sales & Marketing</h3>
           <ul style="list-style: disc; padding-left: 1.25rem;">
             <li>Leads synchroniseren tussen webformulieren, CRM en e‑mailcampagnes.</li>
             <li>Scoring en automatische taakcreatie voor sales.</li>
             <li>Rapporten met pipeline, conversies en no‑show alerts.</li>
           </ul>
-        </div>
-        <div class="card">
+        </a>
+        <a href="support-operations.html" class="card">
           <h3>Support & Operations</h3>
           <ul style="list-style: disc; padding-left: 1.25rem;">
             <li>Tickets automatisch aanmaken, triëren en verrijken.</li>
             <li>SLA‑bewaking en escalaties via Teams/Slack.</li>
             <li>Self‑service flows voor resets, provisioning en updates.</li>
           </ul>
-        </div>
-        <div class="card">
+        </a>
+        <a href="finance-admin.html" class="card">
           <h3>Finance & Admin</h3>
           <ul style="list-style: disc; padding-left: 1.25rem;">
             <li>Facturen lezen en boeken, betalingen matchen, herinneringen uitsturen.</li>
             <li>Contractstatus en budgetrapportage automatisch up‑to‑date.</li>
           </ul>
-        </div>
-        <div class="card">
+        </a>
+        <a href="it-secops.html" class="card">
           <h3>IT & SecOps</h3>
           <ul style="list-style: disc; padding-left: 1.25rem;">
             <li>Vulnerability‑feeds koppelen aan ticketing en change‑flows.</li>
             <li>Automatische compliancetaken en audit‑trail export.</li>
             <li>Proactieve monitoring en waarschuwingen.</li>
           </ul>
-        </div>
+        </a>
       </div>
     </section>
-    <!-- New tab-based usecases section -->
-    <section id="usecases" class="container">
-      <div class="section-title">
-        <h2>Use‑cases per sector</h2>
-        <p>Bekijk welke processen we typisch automatiseren in verschillende domeinen.</p>
-      </div>
-      <!-- Tabs -->
-      <div class="tabs">
-        <button class="tab" data-target="tab-finance" type="button">Finance</button>
-        <button class="tab" data-target="tab-it" type="button">IT</button>
-        <button class="tab" data-target="tab-admin" type="button">Admin</button>
-      </div>
-      <!-- Tab contents -->
-      <div id="tab-finance" class="tab-content">
-        <ul>
-          <li>Automatische factuurverwerking en boeking</li>
-          <li>Betalingsmatching en herinneringen</li>
-          <li>Contractstatus en budgetrapportage</li>
-        </ul>
-      </div>
-      <div id="tab-it" class="tab-content">
-        <ul>
-          <li>Vulnerability‑feeds koppelen aan ticketing en change‑flows</li>
-          <li>Automatische compliancetaken en audit‑trail export</li>
-          <li>Proactieve monitoring en waarschuwingen</li>
-        </ul>
-      </div>
-      <div id="tab-admin" class="tab-content">
-        <ul>
-          <li>Leads synchroniseren tussen webformulieren, CRM en e‑mailcampagnes</li>
-          <li>Scoring en automatische taakcreatie voor sales</li>
-          <li>Rapporten met pipeline, conversies en no‑show alerts</li>
-        </ul>
-      </div>
-    </section>
-    <script>
-      // Tab switching logic scoped to usecases section
-      document.addEventListener('DOMContentLoaded', function() {
-        const section = document.querySelector('section#usecases');
-        if (section) {
-          const tabs = section.querySelectorAll('.tab');
-          const panels = section.querySelectorAll('.tab-content');
-          tabs.forEach((tab, index) => {
-            tab.addEventListener('click', function() {
-              tabs.forEach(t => t.classList.remove('active'));
-              panels.forEach(p => p.classList.remove('active'));
-              tab.classList.add('active');
-              panels[index].classList.add('active');
-            });
-          });
-          // Activate first tab by default
-          if (tabs.length) {
-            tabs[0].classList.add('active');
-            panels[0].classList.add('active');
-          }
-        }
-      });
-    </script>
+    <!-- removed tab switching script -->
     <!-- Workflow -->
     <section id="workflow" class="container">
       <div class="section-title">
